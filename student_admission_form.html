@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Admission Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- ── Banner ── -->
+        <div class="banner">
+            <div class="badge">2026 – 2027 Academic Year</div>
+            <h1>Student Admission Form</h1>
+            <p>Fill in the details below carefully. All fields marked <strong>*</strong> are required.</p>
+        </div>
+
+        <!-- ── Card ── -->
+        <div class="card">
+            <form id="admissionForm" action="#" method="POST" enctype="multipart/form-data" novalidate>
+
+                <!-- ── Personal Information ── -->
+                <p class="section-title">Personal Information</p>
+                <div class="grid-2">
+
+                    <!-- Full Name -->
+                    <div class="form-group span-2">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required
+                            autocomplete="name" />
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="dob" name="dob" required />
+                    </div>
+
+                    <!-- Age -->
+                    <div class="form-group">
+                        <label for="age">Age <span class="required">*</span></label>
+                        <input type="number" id="age" name="age" placeholder="Enter your age" min="5" max="100" required style="width: 200px;" />
+                    </div>
+
+                    <!-- Gender (Radio) -->
+                    <div class="form-group span-2">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="male" required /> Male
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="female" /> Female
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="other" /> Other
+                            </label>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Upload Photo -->
+                    <div class="form-group span-2">
+                        <label for="photo">Upload Passport-Size Photo <span class="required">*</span></label>
+                        <div class="file-wrapper">
+                            <input type="file" id="photo" name="photo" accept="image/png, image/jpeg, image/jpg"
+                                required />
+                        </div>
+                    </div>
+
+                </div><!-- /grid-2 -->
+
+                <!-- ── Contact Details ── -->
+                <p class="section-title">Contact Details</p>
+                <div class="grid-2">
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required
+                            autocomplete="email" />
+                    </div>
+
+                    <!-- Contact Number -->
+                    <div class="form-group">
+                        <label for="contact">Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="contact" name="contact" placeholder="e.g. +91 98765 43210"
+                            pattern="[0-9+\- ]{7,15}" required autocomplete="tel" />
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group span-2">
+                        <label for="address">Residential Address <span class="required">*</span></label>
+                        <textarea id="address" name="address"
+                            placeholder="House / Flat No., Street, City, State, PIN Code" required></textarea>
+                    </div>
+
+                </div><!-- /grid-2 -->
+
+                <!-- ── Academic Details ── -->
+                <p class="section-title">Academic Details</p>
+                <div class="grid-2">
+
+                    <!-- Course Selection -->
+                    <div class="form-group">
+                        <label for="course">Course Applied For <span class="required">*</span></label>
+                        <select id="course" name="course" required>
+                            <option value="" disabled selected>-- Select a Course --</option>
+                            <optgroup label="Science">
+                                <option value="bsc_cs">B.Sc. Computer Science</option>
+                                <option value="bsc_physics">B.Sc. Physics</option>
+                                <option value="bsc_math">B.Sc. Mathematics</option>
+                            </optgroup>
+                            <optgroup label="Commerce">
+                                <option value="bcom">B.Com (General)</option>
+                                <option value="bcom_hons">B.Com (Honours)</option>
+                            </optgroup>
+                            <optgroup label="Arts">
+                                <option value="ba_english">B.A. English</option>
+                                <option value="ba_history">B.A. History</option>
+                            </optgroup>
+                            <optgroup label="Engineering">
+                                <option value="btech_cs">B.Tech Computer Science</option>
+                                <option value="btech_mech">B.Tech Mechanical</option>
+                                <option value="btech_civil">B.Tech Civil</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Previous Qualification -->
+                    <div class="form-group">
+                        <label for="qualification">Previous Qualification <span class="required">*</span></label>
+                        <select id="qualification" name="qualification" required>
+                            <option value="" disabled selected>-- Select Qualification --</option>
+                            <option value="10th">10th Standard (SSC)</option>
+                            <option value="12th_science">12th Science (HSC)</option>
+                            <option value="12th_commerce">12th Commerce (HSC)</option>
+                            <option value="12th_arts">12th Arts (HSC)</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="graduation">Graduation (UG)</option>
+                            <option value="post_graduation">Post Graduation (PG)</option>
+                        </select>
+                    </div>
+
+                    <!-- Percentage / Marks -->
+                    <div class="form-group">
+                        <label for="percentage">Percentage / CGPA Obtained <span class="required">*</span></label>
+                        <input type="number" id="percentage" name="percentage" placeholder="e.g. 85.50" min="0"
+                            max="100" step="0.01" required />
+                    </div>
+
+                    <!-- Year of Passing -->
+                    <div class="form-group">
+                        <label for="yearOfPassing">Year of Passing <span class="required">*</span></label>
+                        <input type="number" id="yearOfPassing" name="yearOfPassing" placeholder="e.g. 2024" min="1990"
+                            max="2026" required />
+                    </div>
+
+                    <!-- Board / University -->
+                    <div class="form-group span-2">
+                        <label for="board">Board / University Name <span class="required">*</span></label>
+                        <input type="text" id="board" name="board"
+                            placeholder="e.g. Maharashtra State Board / Mumbai University" required />
+                    </div>
+
+                </div><!-- /grid-2 -->
+
+                <!-- ── Submit ── -->
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    Submit Application →
+                </button>
+                <p class="footer-note">
+                    By submitting this form, you confirm that all information provided is accurate and complete.
+                </p>
+
+            </form>
+        </div><!-- /card -->
+
+    </div><!-- /wrapper -->
+
+</body>
+
+</html>
